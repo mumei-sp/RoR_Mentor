@@ -1,0 +1,35 @@
+<%if user_signed_in?%>
+<h1>Mentees</h1>
+
+<table class="table table-striped table-hover" >
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Vtu</th>
+      <th>Dept</th>
+      <th>Marks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mentees.each do |mentee| %>
+    <%if mentee.user==current_user%>
+      <tr>
+        <td>
+          <%=link_to mentee.name,mentee%>
+        <td><%= mentee.vtu %></td>
+        <td><%= mentee.dept %></td>
+        <td><%= mentee.marks %></td>
+        <td><%= link_to 'Destroy', mentee, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-outline-danger btn-sm" %></td>
+      </tr>
+    <% end %>  
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%else%>
+<br>
+<h1>Hello Welcome</h1>
+Store ur mentee records!
+<%end%>

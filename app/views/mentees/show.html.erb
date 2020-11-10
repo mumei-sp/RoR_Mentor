@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @mentee.name %></h1>
+  <p class="lead">
+  	<%= @mentee.name %>, <%= @mentee.vtu %>, <%= @mentee.dept %></p>
+  <hr class="my-4">
+  <p>Marks: <%= @mentee.marks %></p>
+  <br>
+  <%= link_to 'Edit', edit_mentee_path(@mentee) ,class:"btn btn-primary btn"%> |
+  <%= link_to 'Back', mentees_path,class:"btn btn-primary btn" %>
+</div>
+
+
+

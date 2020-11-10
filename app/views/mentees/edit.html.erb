@@ -1,0 +1,8 @@
+<h1>Edit Mentee</h1>
+
+<%= render 'form', mentee: @mentee %>
+
+<%= link_to 'Show', @mentee,class:"btn btn-outline-primary btn-sm" %> |
+<%= link_to 'Back', mentees_path,class:"btn btn-outline-secondary btn-sm" %> |
+<%= link_to 'Destroy', @mentee, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-outline-danger btn-sm" %>
+
